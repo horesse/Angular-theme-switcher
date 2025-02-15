@@ -1,1 +1,62 @@
 @import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "tailwind-scrollbar";
+
+@theme {
+    --font-*: initial;
+    --font-poppins: Poppins, system-ui, sans-serif;
+    --color-border: var(--border);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    :root {
+        --background: #ffffff;
+        --foreground: #0c1420;
+        --card: #f1f5f9;
+        --card-foreground: #000000;
+        --primary: #e11d48;
+        --primary-foreground: #ffffff;
+        --muted: #cfd9e5;
+        --muted-foreground: #64748b;
+        --destructive: #cc0033;
+        --destructive-foreground: #fafafa;
+        --border: #e2e8f0;
+    }
+
+    html[data-theme='dark'] {
+        --background: #0a0a0a;
+        --foreground: #f2f2f2;
+        --card: #121212;
+        --card-foreground: #262626;
+        --muted: #262626;
+        --muted-foreground: #a3a3a3;
+        --border: #262626;
+    }
+}
