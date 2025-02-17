@@ -1,10 +1,11 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/aspect-ratio";
+
 @plugin "tailwind-scrollbar";
 
 @theme {
@@ -50,7 +51,7 @@
         --border: #e2e8f0;
     }
 
-    html[data-theme='dark'] {
+    .dark {
         --background: #0a0a0a;
         --foreground: #f2f2f2;
         --card: #121212;
@@ -59,4 +60,8 @@
         --muted-foreground: #a3a3a3;
         --border: #262626;
     }
+}
+
+:root {
+    color: var(--foreground);
 }
