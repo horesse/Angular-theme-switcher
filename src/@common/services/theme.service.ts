@@ -5,13 +5,21 @@ import { Theme } from '@common/models/theme.model';
     providedIn: 'root',
 })
 export class ThemeService {
-    theme = signal<Theme>({ mode: 'dark', color: 'base' });
+    theme = signal<Theme>({
+        mode: 'dark',
+        color: 'rose',
+        background: 'neutral',
+    });
 
     constructor() {
         this.loadTheme();
         effect(() => {
             this.setTheme();
         });
+    }
+
+    get isDark(): boolean {
+        return this.theme().mode == 'dark';
     }
 
     private loadTheme() {
@@ -26,14 +34,14 @@ export class ThemeService {
         this.setThemeClass();
     }
 
-    public get isDark(): boolean {
-        return this.theme().mode == 'dark';
-    }
-
     private setThemeClass() {
         document.querySelector('html')!.className = this.theme().mode;
         document
             .querySelector('html')!
             .setAttribute('data-theme', this.theme().color);
+
+        document
+            .querySelector('html')!
+            .setAttribute('data-background', this.theme().background);
     }
 }

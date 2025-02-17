@@ -1,4 +1,5 @@
 export class Theme {
     mode: 'dark' | 'light';
-    color: string;
+    color: 'sky' | 'rose' | 'amber';
+    background: string;
 }

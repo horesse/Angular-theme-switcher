@@ -1,24 +1,90 @@
 <div class="flex h-full w-full flex-col items-center justify-center">
     <div class="w-full max-w-3xl">
-        <div class="mx-auto max-w-none">
-            <h1>Landing Module</h1>
-            <p>
-                This can be the landing or the welcome page of your application.
-                If you have an SSR (Server Side Rendering) setup, or if you
-                don't need to have Search engine visibility and optimizations,
-                you can even use this page as your primary landing page.
-            </p>
-            <p>
-                This is a separate "module", it has its own directory and
-                routing setup and also it's completely separated from the actual
-                application. This is also a simple example of a multiple
-                applications setup that uses the same codebase. You can have
-                different entry points and essentially have different
-                applications within the same codebase.
-            </p>
-            <button (click)="toggleThemeMode()" class="bg-primary">
-                /Change me
-            </button>
+        <div
+            class="mx-auto flex max-w-none flex-col items-center justify-center"
+        >
+            <div class="mt-2 grid grid-cols-2 gap-2">
+                <button
+                    class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleThemeMode('light')"
+                >
+                    Light
+                </button>
+
+                <button
+                    class="focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleThemeMode('dark')"
+                >
+                    Dark
+                </button>
+            </div>
+
+            <div class="mt-2 grid grid-cols-2 gap-2">
+                <div
+                    class="theme-rose focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleColorMode('rose')"
+                >
+                    <span
+                        style="background: var(--primary)"
+                        class="bg-primary mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full"
+                    ></span>
+                    <p>Rose</p>
+                </div>
+
+                <div
+                    class="theme-amber focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleColorMode('amber')"
+                >
+                    <span
+                        style="background: var(--primary)"
+                        class="bg-primary mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full"
+                    ></span>
+                    <p>Amber</p>
+                </div>
+
+                <div
+                    class="theme-sky focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleColorMode('sky')"
+                >
+                    <span
+                        style="background: var(--primary)"
+                        class="bg-primary mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full"
+                    ></span>
+                    <p>Sky</p>
+                </div>
+            </div>
+
+            <div class="mt-2 grid grid-cols-2 gap-2">
+                <div
+                    class="background-slate focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleBackgroundMode('slate')"
+                >
+                    <span
+                        style="background: var(--background)"
+                        class="bg-primary mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full"
+                    ></span>
+                    <p>Slate</p>
+                </div>
+
+                <div
+                    class="background-neutral focus-visible:ring-ring border-border bg-background text-muted-foreground hover:bg-card hover:text-foreground inline-flex h-8 cursor-pointer items-center justify-start rounded-md border px-3 text-xs font-medium whitespace-nowrap shadow-xs transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+                    (click)="toggleBackgroundMode('neutral')"
+                >
+                    <span
+                        style="background: var(--background)"
+                        class="bg-primary mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full"
+                    ></span>
+                    <p>Neutral</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+            <div class="bg-card h-100 w-100">
+                <div class="bg-primary py-5">
+                    <span class="text-primary-foreground">тест</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

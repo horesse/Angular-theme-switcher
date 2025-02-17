@@ -10,10 +10,21 @@ import { ThemeService } from '@common/services/theme.service';
 export class HomeComponent {
     constructor(private _themeService: ThemeService) {}
 
-    toggleThemeMode() {
+    toggleThemeMode(mode: 'dark' | 'light') {
         this._themeService.theme.update((theme) => {
-            const mode = !this._themeService.isDark ? 'dark' : 'light';
             return { ...theme, mode: mode };
+        });
+    }
+
+    toggleColorMode(color: 'rose' | 'sky' | 'amber') {
+        this._themeService.theme.update((theme) => {
+            return { ...theme, color: color };
+        });
+    }
+
+    toggleBackgroundMode(background: 'slate' | 'neutral') {
+        this._themeService.theme.update((theme) => {
+            return { ...theme, background: background };
         });
     }
 }
